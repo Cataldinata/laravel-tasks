@@ -21,7 +21,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'
+          php-version: '8.3'
 
       - name: Check if composer.json exists
         id: check_files
@@ -64,9 +64,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A6AAD1EEB9C842989F7DDDA4430A4693 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2DB6DB01E22E4481B8B5F36CA0F554EA }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_BA8223258EBD46EA8777D2926EBD6220 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_82143BD22BBD480DB3A5D778ECC19D03 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2D530811D41F48C9A647BE74CE6A802B }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_CB509D94924C4AF595B19B76961B9EA0 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
