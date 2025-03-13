@@ -1,0 +1,23 @@
+name: Run Azure Login with OpenID Connect
+on: [push]
+
+permissions:
+      id-token: write
+      contents: read
+      
+jobs: 
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Az CLI login'
+      uses: azure/login@v1
+      with:
+          client-id: ${{ 2a91f42d-ba13-4d81-a1db-49ceaed65a39 }}
+          tenant-id: ${{ 81c5d04c-1165-4a94-b8e1-74ad174479db }}
+          subscription-id: ${{ d7dd5227-dd56-4438-b6da-71387eb3b030 }}
+  
+    - name: 'Run Azure CLI commands'
+      run: |
+          az account show
+          az group list
+          pwd
